@@ -1,0 +1,308 @@
+{
+  "info": {
+    "name": "Student Course Portal - Microservices",
+    "description": "API Collection for testing all 5 microservices",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Student Service",
+      "item": [
+        {
+          "name": "Get All Students",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8081/students",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8081",
+              "path": ["students"]
+            }
+          }
+        },
+        {
+          "name": "Get Student By ID",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8081/students/1",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8081",
+              "path": ["students", "1"]
+            }
+          }
+        },
+        {
+          "name": "Create Student",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"Alice Johnson\",\n  \"email\": \"alice@example.com\",\n  \"program\": \"Computer Science\"\n}"
+            },
+            "url": {
+              "raw": "http://localhost:8081/students",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8081",
+              "path": ["students"]
+            }
+          }
+        },
+        {
+          "name": "Update Student",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"Alice Updated\",\n  \"email\": \"alice.updated@example.com\",\n  \"program\": \"Software Engineering\"\n}"
+            },
+            "url": {
+              "raw": "http://localhost:8081/students/1",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8081",
+              "path": ["students", "1"]
+            }
+          }
+        },
+        {
+          "name": "Delete Student",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8081/students/1",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8081",
+              "path": ["students", "1"]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Course Service",
+      "item": [
+        {
+          "name": "Get All Courses",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8082/courses",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8082",
+              "path": ["courses"]
+            }
+          }
+        },
+        {
+          "name": "Get Course By ID",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8082/courses/1",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8082",
+              "path": ["courses", "1"]
+            }
+          }
+        },
+        {
+          "name": "Create Course",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"courseCode\": \"CS101\",\n  \"courseName\": \"Data Structures\",\n  \"credits\": 3,\n  \"instructor\": \"Dr. Smith\"\n}"
+            },
+            "url": {
+              "raw": "http://localhost:8082/courses",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8082",
+              "path": ["courses"]
+            }
+          }
+        },
+        {
+          "name": "Update Course",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"courseCode\": \"CS101\",\n  \"courseName\": \"Advanced Data Structures\",\n  \"credits\": 4,\n  \"instructor\": \"Dr. Johnson\"\n}"
+            },
+            "url": {
+              "raw": "http://localhost:8082/courses/1",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8082",
+              "path": ["courses", "1"]
+            }
+          }
+        },
+        {
+          "name": "Delete Course",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8082/courses/1",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8082",
+              "path": ["courses", "1"]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Enrollment Service",
+      "item": [
+        {
+          "name": "Enroll Student in Course",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"studentId\": 1,\n  \"courseId\": 1\n}"
+            },
+            "url": {
+              "raw": "http://localhost:8083/enroll",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8083",
+              "path": ["enroll"]
+            }
+          }
+        },
+        {
+          "name": "Get Student Enrollments",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8083/enrollments/student/1",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8083",
+              "path": ["enrollments", "student", "1"]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Result Service",
+      "item": [
+        {
+          "name": "Create Result",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"studentId\": 1,\n  \"courseId\": 1,\n  \"grade\": \"A\",\n  \"score\": 92.5\n}"
+            },
+            "url": {
+              "raw": "http://localhost:8084/results",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8084",
+              "path": ["results"]
+            }
+          }
+        },
+        {
+          "name": "Get Student Results",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8084/results/student/1",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8084",
+              "path": ["results", "student", "1"]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Notification Service",
+      "item": [
+        {
+          "name": "Send Enrollment Notification",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"studentId\": 1,\n  \"courseId\": 1,\n  \"studentName\": \"Alice Johnson\",\n  \"courseName\": \"Data Structures\"\n}"
+            },
+            "url": {
+              "raw": "http://localhost:8085/notify/enrollment",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8085",
+              "path": ["notify", "enrollment"]
+            }
+          }
+        }
+      ]
+    }
+  ]
+}
+
