@@ -18,7 +18,8 @@ Each service runs independently with its own H2 in-memory database.
 
 - **Framework:** Spring Boot 3.1.5
 - **Language:** Java 17
-- **Database:** H2 (in-memory, separate DB per service)
+- **Database:** MySQL 8.0 (Dockerized)
+- **Containerization:** Docker & Docker Compose
 - **Build Tool:** Maven
 - **Communication:** REST API with RestTemplate
 
@@ -26,6 +27,7 @@ Each service runs independently with its own H2 in-memory database.
 
 - Java 17 or higher
 - Maven 3.6 or higher
+- Docker Desktop
 - Your favorite IDE (IntelliJ IDEA, Eclipse, VS Code)
 
 ## Project Structure
@@ -42,7 +44,20 @@ Each service runs independently with its own H2 in-memory database.
 
 ## Setup Instructions
 
-### Option 1: Run Each Service Separately (Recommended for Development)
+### Option 1: Run with Docker (Recommended)
+
+1. **Build the project:**
+   ```bash
+   mvn clean install
+   ```
+
+2. **Start services:**
+   ```bash
+   docker compose up -d
+   ```
+   This will start all 5 microservices, 5 MySQL databases, and phpMyAdmin.
+
+### Option 2: Run Each Service Separately (Manual)
 
 1. **Open 5 separate terminal windows/tabs**
 
@@ -93,7 +108,7 @@ Each service runs independently with its own H2 in-memory database.
 4. Enrollment Service
 5. Result Service
 
-### Option 2: Build All Services First
+### Option 3: Build All Services First
 
 ```bash
 # Build all services
@@ -312,22 +327,19 @@ curl http://localhost:8084/results/student/1
 
 ---
 
-## H2 Database Console
+## Database Management (phpMyAdmin)
 
-Each service has its own H2 console available at:
-- Student Service: http://localhost:8081/h2-console
-- Course Service: http://localhost:8082/h2-console
-- Enrollment Service: http://localhost:8083/h2-console
-- Result Service: http://localhost:8084/h2-console
+Access the database management interface at: **http://localhost:8080**
 
-**Connection Details:**
-- JDBC URL: (see application.properties for each service)
-  - Student: `jdbc:h2:mem:studentdb`
-  - Course: `jdbc:h2:mem:coursedb`
-  - Enrollment: `jdbc:h2:mem:enrollmentdb`
-  - Result: `jdbc:h2:mem:resultdb`
-- Username: `sa`
-- Password: (leave empty)
+**Login Details:**
+- **Server:** (Use the container name)
+  - `student-db`
+  - `course-db`
+  - `enrollment-db`
+  - `result-db`
+  - `notification-db`
+- **Username:** `root`
+- **Password:** `root`
 
 ---
 
@@ -384,7 +396,7 @@ mvn clean install -U
 
 ## Future Enhancements
 
-- Docker containerization
+- ✅ Docker containerization
 - Service discovery (Eureka)
 - API Gateway
 - Circuit breaker pattern
@@ -453,7 +465,6 @@ Student Course Portal Microservices System
 
 ## Notes
 
-- All databases are in-memory (H2) and will be cleared on service restart
-- Services must be started in the correct order for proper functionality
+- Services must be started in the correct order for proper functionality (handled automatically by Docker Compose)
 - Default configuration uses localhost - modify application.properties for different deployments
 
