@@ -396,6 +396,49 @@ mvn clean install -U
 
 ---
 
+## Project Screenshots
+
+### API Testing Results (Postman)
+
+#### Student Service
+| Create Student | Get All Students |
+|:---:|:---:|
+| ![Create Student](Postman%20Test%20Screenshots/API/POST_students%20.png) | ![Get All Students](Postman%20Test%20Screenshots/API/GET_students.png) |
+
+| Get Student by ID | Update Student | Delete Student |
+|:---:|:---:|:---:|
+| ![Get Student by ID](Postman%20Test%20Screenshots/API/GET_students_by_id.png) | ![Update Student](Postman%20Test%20Screenshots/API/PUT_Student.png) | ![Delete Student](Postman%20Test%20Screenshots/API/DELETE_Student.png) |
+
+#### Course Service
+| Create Course | Get All Courses |
+|:---:|:---:|
+| ![Create Course](Postman%20Test%20Screenshots/API/POST_course.png) | ![Get All Courses](Postman%20Test%20Screenshots/API/GET_courses.png) |
+
+| Get Course by ID | Update Course | Delete Course |
+|:---:|:---:|:---:|
+| ![Get Course by ID](Postman%20Test%20Screenshots/API/GET_course%20by%20id.png) | ![Update Course](Postman%20Test%20Screenshots/API/PUT_courses.png) | ![Delete Course](Postman%20Test%20Screenshots/API/DELETE_Courses.png) |
+
+#### Enrollment & Results
+| Enroll Student | Get Enrollments |
+|:---:|:---:|
+| ![Enroll Student](Postman%20Test%20Screenshots/API/POST_Enroll%20student%20in%20course.png) | ![Get Enrollments](Postman%20Test%20Screenshots/API/GET_Student%20enrollments.png) |
+
+| Add Result | Get Results | Send Notification |
+|:---:|:---:|:---:|
+| ![Add Result](Postman%20Test%20Screenshots/API/POST_results.png) | ![Get Results](Postman%20Test%20Screenshots/API/GET_Student%20results.png) | ![Send Notification](Postman%20Test%20Screenshots/API/POST_Send%20Enrollment%20Notification.png) |
+
+### Database Views
+
+| Student DB | Course DB |
+|:---:|:---:|
+| ![Student DB](Postman%20Test%20Screenshots/DB%20s/Student_DB.png) | ![Course DB](Postman%20Test%20Screenshots/DB%20s/Course_DB.png) |
+
+| Enrollment DB | Result DB |
+|:---:|:---:|
+| ![Enrollment DB](Postman%20Test%20Screenshots/DB%20s/Enrollment_DB.png) | ![Result DB](Postman%20Test%20Screenshots/DB%20s/Result_DB.png) |
+
+---
+
 ## License
 
 This is a educational project for learning microservices architecture.
