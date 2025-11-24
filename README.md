@@ -141,9 +141,9 @@ POST http://localhost:8081/students
 Content-Type: application/json
 
 {
-  "name": "John Doe",
-  "email": "john.doe@example.com",
-  "program": "Computer Science"
+  "name": "Pubudu Shehan",
+  "email": "pubudu@gmail.com",
+  "program": "Machine Learning Basics"
 }
 ```
 
@@ -153,9 +153,9 @@ PUT http://localhost:8081/students/{id}
 Content-Type: application/json
 
 {
-  "name": "John Updated",
-  "email": "john.updated@example.com",
-  "program": "Software Engineering"
+  "name": "Pubudu Shehan",
+  "email": "pubudushehan@gmail.com",
+  "program": "Machine Learning Basics"
 }
 ```
 
@@ -184,10 +184,10 @@ POST http://localhost:8082/courses
 Content-Type: application/json
 
 {
-  "courseCode": "CS101",
+  "courseCode": "CS208",
   "courseName": "Introduction to Computer Science",
   "credits": 3,
-  "instructor": "Dr. Smith"
+  "instructor": "Dr. Nadeesha"
 }
 ```
 
@@ -197,10 +197,10 @@ PUT http://localhost:8082/courses/{id}
 Content-Type: application/json
 
 {
-  "courseCode": "CS101",
-  "courseName": "Advanced Computer Science",
-  "credits": 4,
-  "instructor": "Dr. Johnson"
+  "courseCode": "CS208",
+  "courseName": "Introduction to Computer Science",
+  "credits": 3,
+  "instructor": "Dr. Sachith"
 }
 ```
 
@@ -247,8 +247,8 @@ Content-Type: application/json
 {
   "studentId": 1,
   "courseId": 1,
-  "grade": "A",
-  "score": 95.5
+  "grade": "B",
+  "score": 67
 }
 ```
 
@@ -269,8 +269,8 @@ Content-Type: application/json
 {
   "studentId": 1,
   "courseId": 1,
-  "studentName": "John Doe",
-  "courseName": "Computer Science"
+  "studentName": "Pubudu Shehan",
+  "courseName": "Machine Learning Basics"
 }
 ```
 
