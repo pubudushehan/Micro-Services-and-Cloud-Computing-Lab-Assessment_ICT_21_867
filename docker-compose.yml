@@ -56,6 +56,16 @@ services:
     networks:
       - microservice-network
 
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    container_name: phpmyadmin
+    environment:
+      PMA_ARBITRARY: 1
+    ports:
+      - "8080:80"
+    networks:
+      - microservice-network
+
 networks:
   microservice-network:
     driver: bridge
